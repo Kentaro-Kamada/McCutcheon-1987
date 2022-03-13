@@ -1,0 +1,196 @@
+LEM: log-linear and event history analysis with missing data.
+Developed by Jeroen Vermunt (c), Tilburg University, The Netherlands.
+Version 1.0 (September 18, 1997).
+
+
+*** INPUT ***
+
+  lat 1
+  man 4
+  dim 5 2 2 2 2
+  mod X 
+      A|X eq2
+      B|X eq2
+      C|X eq2
+      D|X eq2
+  dat [27 0 2 0 16 0 4 1 40 3 32 2 339 83 543 310]
+  des [1 0 1 0 1 0 1 0 0 1
+       2 0 2 0 2 0 0 2 0 2
+       3 0 3 0 0 3 0 3 0 3
+       4 0 0 4 0 4 0 4 0 4]
+  see 123
+
+
+*** STATISTICS ***
+
+  Number of iterations = 647
+  Converge criterion   = 0.0000009945
+  Seed random values   = 123
+
+  X-squared            = 36.6724 (0.0000)
+  L-squared            = 36.4989 (0.0000)
+  Cressie-Read         = 35.7604 (0.0000)
+  Dissimilarity index  = 0.0234
+  Degrees of freedom   = 7
+  Log-likelihood       = -2233.79095
+  Number of parameters = 8 (+1)
+  Sample size          = 1402.0
+  BIC(L-squared)       = -14.2206
+  AIC(L-squared)       = 22.4989
+  BIC(log-likelihood)  = 4525.5471
+  AIC(log-likelihood)  = 4483.5819
+
+WARNING: no information is provided on identification of parameters
+
+
+
+*** FREQUENCIES ***
+
+  A B C D     observed  estimated  std. res.
+  1 1 1 1      27.000     23.563      0.708
+  1 1 1 2       0.000      0.031     -0.177
+  1 1 2 1       2.000      6.546     -1.777
+  1 1 2 2       0.000      0.116     -0.340
+  1 2 1 1      16.000      5.766      4.262
+  1 2 1 2       0.000      1.216     -1.103
+  1 2 2 1       4.000      8.264     -1.483
+  1 2 2 2       1.000      4.497     -1.649
+  2 1 1 1      40.000     44.279     -0.643
+  2 1 1 2       3.000      2.098      0.623
+  2 1 2 1      32.000     23.538      1.744
+  2 1 2 2       2.000      7.754     -2.066
+  2 2 1 1     339.000    347.346     -0.448
+  2 2 1 2      83.000     81.608      0.154
+  2 2 2 1     543.000    543.698     -0.030
+  2 2 2 2     310.000    301.679      0.479
+
+
+
+*** PSEUDO R-SQUARED MEASURES ***
+
+* P(A|X) *
+                         baseline   fitted   R-squared
+  entropy                 0.1539    0.0766    0.5025
+  qualitative variance    0.0344    0.0145    0.5792
+  classification error    0.0357    0.0147    0.5882
+  -2/N*log-likelihood     0.3078    0.1531    0.5025/0.1340
+  likelihood^(-2/N)       1.3605    1.1655    0.1433/0.5409
+
+* P(B|X) *
+                         baseline   fitted   R-squared
+  entropy                 0.2679    0.1171    0.5628
+  qualitative variance    0.0699    0.0244    0.6504
+  classification error    0.0756    0.0251    0.6686
+  -2/N*log-likelihood     0.5358    0.2343    0.5628/0.2317
+  likelihood^(-2/N)       1.7088    1.2640    0.2603/0.6276
+
+* P(C|X) *
+                         baseline   fitted   R-squared
+  entropy                 0.6548    0.5178    0.2092
+  qualitative variance    0.2310    0.1676    0.2747
+  classification error    0.3623    0.2129    0.4124
+  -2/N*log-likelihood     1.3095    1.0356    0.2092/0.2150
+  likelihood^(-2/N)       3.7043    2.8168    0.2396/0.3282
+
+* P(D|X) *
+                         baseline   fitted   R-squared
+  entropy                 0.5972    0.0000    0.9999
+  qualitative variance    0.2036    0.0000    1.0000
+  classification error    0.2846    0.0000    1.0000
+  -2/N*log-likelihood     1.1945    0.0001    0.9999/0.5443
+  likelihood^(-2/N)       3.3018    1.0001    0.6971/1.0000
+
+
+
+*** LOG-LINEAR PARAMETERS ***
+
+* TABLE X [or P(X)] *
+
+  effect           beta   exp(beta)
+  X 
+   1             0.9187      2.5061 
+   2             1.3940      4.0310 
+   3             0.5808      1.7875 
+   4            -1.2344      0.2910 
+   5            -1.6591      0.1903 
+
+
+
+*** (CONDITIONAL) PROBABILITIES ***
+
+* P(X) *
+
+  1              0.2846
+  2              0.4578
+  3              0.2030
+  4              0.0330
+  5              0.0216
+
+* P(A|X) *
+
+  1 | 1          0.0147
+  2 | 1          0.9853
+  1 | 2          0.0147
+  2 | 2          0.9853
+  1 | 3          0.0147
+  2 | 3          0.9853
+  1 | 4          0.0147
+  2 | 4          0.9853
+  1 | 5          0.9853
+  2 | 5          0.0147
+
+* P(B|X) *
+
+  1 | 1          0.0251
+  2 | 1          0.9749
+  1 | 2          0.0251
+  2 | 2          0.9749
+  1 | 3          0.0251
+  2 | 3          0.9749
+  1 | 4          0.9749
+  2 | 4          0.0251
+  1 | 5          0.9749
+  2 | 5          0.0251
+
+* P(C|X) *
+
+  1 | 1          0.2129
+  2 | 1          0.7871
+  1 | 2          0.2129
+  2 | 2          0.7871
+  1 | 3          0.7871
+  2 | 3          0.2129
+  1 | 4          0.7871
+  2 | 4          0.2129
+  1 | 5          0.7871
+  2 | 5          0.2129
+
+* P(D|X) *
+
+  1 | 1          0.0000
+  2 | 1          1.0000
+  1 | 2          1.0000
+  2 | 2          0.0000
+  1 | 3          1.0000
+  2 | 3          0.0000
+  1 | 4          1.0000
+  2 | 4          0.0000
+  1 | 5          1.0000
+  2 | 5          0.0000
+
+
+
+*** LATENT CLASS OUTPUT ***
+
+          X  1    X  2    X  3    X  4    X  5
+         0.2846  0.4578  0.2030  0.0330  0.0216
+  A  1   0.0147  0.0147  0.0147  0.0147  0.9853
+  A  2   0.9853  0.9853  0.9853  0.9853  0.0147
+  B  1   0.0251  0.0251  0.0251  0.9749  0.9749
+  B  2   0.9749  0.9749  0.9749  0.0251  0.0251
+  C  1   0.2129  0.2129  0.7871  0.7871  0.7871
+  C  2   0.7871  0.7871  0.2129  0.2129  0.2129
+  D  1   0.0000  1.0000  1.0000  1.0000  1.0000
+  D  2   1.0000  0.0000  0.0000  0.0000  0.0000
+
+E = 0.1537, lambda = 0.7165
